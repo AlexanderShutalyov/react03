@@ -1,24 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
+import UserCardsWrapper from "./components/UserCardsWrapper/UserCardsWrapper";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <React.Fragment>
+
+        <UserCardsWrapper />
+
+      <Router>
+        <div>
+          <Switch>
+              <Route path="/:id" children={<Child />} />
+          </Switch>
+        </div>
+      </Router>
+      </React.Fragment>
+  );
+}
+
+function Child() {
+  let { id } = useParams();
+
+  return (
+      <React.Fragment>
+              <div>
+                  <h3>ID: {id}</h3>
+              </div>
+      </React.Fragment>
   );
 }
 
