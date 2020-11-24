@@ -31,7 +31,7 @@ const UserCard = ({ id, name, username, email, address, company, phone, website,
                <p>BS: { (company && company.bs) || '-'} </p>
            </div>
            <div>
-               <Link to={'/'+id}>
+               <Link to={'/user/'+id}>
                    <button type="button" className="btn btn-info">Button</button>
                </Link>
            </div>

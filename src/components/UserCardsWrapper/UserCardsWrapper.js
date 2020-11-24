@@ -8,7 +8,6 @@ class UserCardsWrapper extends React.Component {
         this.props = props;
 
         this.state = {
-            currentPage: 'wrapper',
             userData: [],
             showPopup: false,
             name: '',
