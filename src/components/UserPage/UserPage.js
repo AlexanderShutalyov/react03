@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Link,
+    useLocation
+} from "react-router-dom";
 
 class UserPage extends React.Component {
     constructor(props) {
@@ -6,8 +11,20 @@ class UserPage extends React.Component {
         this.props = props;
     }
 
+    // componentDidMount() {
+    //     // const { isLoading } = this.state;
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then((response) => response.json())
+    //         // .then(this.setUserData)
+    //         .then((response) => this.setState({ userData: response }))
+    //         // .then(() => this.setState({ isLoading: !isLoading }))
+    //         .then(() => console.log('Loaded'))
+    // }
+
     render() {
-        console.log(this.props.match.params.id);
+        // console.log(this.props);
+
+        // console.log(this.props.match.params.id);
 //        let {id} = useParams();
         return (
             <React.Fragment>

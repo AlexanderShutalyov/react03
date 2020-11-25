@@ -89,7 +89,4 @@ class UserCardsWrapper extends React.Component {
 
 export default UserCardsWrapper;
 
-// { showPopup && <Popup {...this.state} addElement={this.addElement} handleInputChange={this.handleInputChange}/>}
-
-
 

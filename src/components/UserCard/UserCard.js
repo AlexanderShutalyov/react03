@@ -11,6 +11,7 @@ import {
 const UserCard = ({ id, name, username, email, address, company, phone, website, removeElement, currentIndex }) => {
     const cardClass = 'Card';
 
+
     return (
        <div className={cardClass}>
             <p> className="Card_subTitle">My id is: { id }</p>
@@ -35,7 +36,6 @@ const UserCard = ({ id, name, username, email, address, company, phone, website,
                    <button type="button" className="btn btn-info">Button</button>
                </Link>
            </div>
-           {/*<button onClick={() => <Link to="/"id>Netflix</Link>}>Show user</button>*/}
             <button onClick={() => removeElement(currentIndex)}>Remove User</button>
         </div>
     )

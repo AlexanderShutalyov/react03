@@ -18,9 +18,7 @@ function App() {
             <Router>
                 <div>
                     <Switch>
-                        {/*<Route path="/user/:id" children={<Child/>}/>*/}
                         <Route path="/user/:id" children={props => <UserPage {...props}/>}/>
-                        {/*<Route path="/user/:id" children={<UserPage {...props}/>}/>*/}
                         <Route exact path="/">
                             <UserCardsWrapper/>
                         </Route>
@@ -30,17 +28,5 @@ function App() {
         </React.Fragment>
     );
 }
-
-// function Child() {
-//     let {id} = useParams();
-//
-//     return (
-//         <React.Fragment>
-//             <div>
-//                 <h3>ID: {id}</h3>
-//             </div>
-//         </React.Fragment>
-//     );
-// }
 
 export default App;
