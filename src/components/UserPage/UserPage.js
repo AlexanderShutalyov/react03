@@ -1,9 +1,11 @@
 import React from 'react';
+import UserPost from "../UserPost/UserPost";
 import {
     BrowserRouter as Router,
     Link,
     useLocation
 } from "react-router-dom";
+import UserCard from "../UserCard/UserCard";
 
 class UserPage extends React.Component {
     constructor(props) {
@@ -11,25 +13,41 @@ class UserPage extends React.Component {
         this.props = props;
     }
 
-    // componentDidMount() {
-    //     // const { isLoading } = this.state;
-    //     fetch('https://jsonplaceholder.typicode.com/users')
-    //         .then((response) => response.json())
-    //         // .then(this.setUserData)
-    //         .then((response) => this.setState({ userData: response }))
-    //         // .then(() => this.setState({ isLoading: !isLoading }))
-    //         .then(() => console.log('Loaded'))
-    // }
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((response) => this.setState({ currentUser: response[this.props.match.params.id] }))
+            .then(() => console.log('Loaded'));
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => response.json())
+            .then((response) => {
+                let posts = [];
+                response.forEach((e) => {
+                    if(e.userId === this.state.currentUser.id) {
+                      posts.push(e);
+                    }
+                });
+                this.setState({ userPosts: posts })
+            })
+            .then(() => console.log('Loaded'))
+
+    }
 
     render() {
-        // console.log(this.props);
-
-        // console.log(this.props.match.params.id);
+        // console.log(this.state);
 //        let {id} = useParams();
         return (
             <React.Fragment>
                 <div>
-                    <h1>HELLO user = {this.props.match.params.id}</h1>
+                    <p>user = {this.props.match.params.id}</p>
+                    <p>name = {this.state && this.state.currentUser ? this.state.currentUser.name : ''}</p>
+                </div>
+                <div>
+                    {this.state && this.state.userPosts && this.state.userPosts.map((props, index) => (
+                        <UserPost {... props} />
+                    ))}
+
                 </div>
             </React.Fragment>
         );
