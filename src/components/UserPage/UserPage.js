@@ -1,5 +1,6 @@
 import React from 'react';
 import UserPost from "../UserPost/UserPost";
+import  './UserPage.css';
 import {
     BrowserRouter as Router,
     Link,
@@ -39,13 +40,13 @@ class UserPage extends React.Component {
 //        let {id} = useParams();
         return (
             <React.Fragment>
-                <div>
+                <div className="user_data">
                     <p>user = {this.props.match.params.id}</p>
                     <p>name = {this.state && this.state.currentUser ? this.state.currentUser.name : ''}</p>
                 </div>
-                <div>
+                <div className="user_posts">
                     {this.state && this.state.userPosts && this.state.userPosts.map((props, index) => (
-                        <UserPost {... props} />
+                        <UserPost key={index} {... props} />
                     ))}
 
                 </div>

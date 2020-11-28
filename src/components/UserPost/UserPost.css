@@ -1,0 +1,8 @@
+.user_post {
+    border: black 1px solid;
+    width: 80%;
+    margin: auto;
+}
+.user_post p {
+    line-height: 1.5
+}

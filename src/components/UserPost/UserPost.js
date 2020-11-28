@@ -1,14 +1,14 @@
 import React from 'react';
-// import './UserCard.css';
+import './UserPost.css';
 
 const UserPost = ({ body, title }) => {
     // const cardClass = 'Card';
 
     return (
-        <div>
+        <div className='user_post'>
         {/*<div className={cardClass}>*/}
-            <p>Title: { title }</p>
-            <p>Body: { body }</p>
+            <p className="post_title">Title: { title }</p>
+            <p className="post_body">Body: { body }</p>
         </div>
     )
 };
