@@ -11,7 +11,6 @@ import {
 const UserCard = ({ id, name, username, email, address, company, phone, website, removeElement, currentIndex }) => {
     const cardClass = 'Card';
 
-
     return (
        <div className={cardClass}>
             <p> className="Card_subTitle">My id is: { id }</p>

@@ -19,8 +19,8 @@ function App() {
                 <div>
                     <Switch>
                         <Route path="/user/:id" children={props => <UserPage {...props}/>}/>
-                        <Route exact path="/">
-                            <UserCardsWrapper/>
+                        <Route exact path="/" component={UserCardsWrapper}>
+                            {/*<UserCardsWrapper/>*/}
                         </Route>
                     </Switch>
                 </div>
