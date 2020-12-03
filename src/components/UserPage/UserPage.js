@@ -7,11 +7,9 @@ import {
     useLocation,
     useParams
 } from "react-router-dom";
-import UserCard from "../UserCard/UserCard";
 
 const UserPage = () => {
     let { id } = useParams();
-    // console.log(props)
     const [currentUser, setCurrentUser] = useState({});
     const [currentPosts, setPostsUser] = useState([]);
 
@@ -30,7 +28,6 @@ const UserPage = () => {
             .then((response) => {
                 let posts = [];
                 response.forEach((e) => {
-                    // if (e.userId === currentUser.id) {
                     if (e.userId === current.id) {
                         posts.push(e);
                     }
