@@ -49,63 +49,8 @@ const UserPage = () => {
                 </div>
             </React.Fragment>
         );
-
-
 };
 export default UserPage;
-
-
-
-
-// export default UserPage1;
-
-// class UserPage extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.props = props;
-//     }
-//
-//     componentDidMount() {
-//         fetch('https://jsonplaceholder.typicode.com/users')
-//             .then((response) => response.json())
-//             .then((response) => this.setState({ currentUser: response[this.props.match.params.id] }))
-//             .then(() => console.log('Loaded'));
-//
-//         fetch('https://jsonplaceholder.typicode.com/posts')
-//             .then((response) => response.json())
-//             .then((response) => {
-//                 let posts = [];
-//                 response.forEach((e) => {
-//                     if(e.userId === this.state.currentUser.id) {
-//                         posts.push(e);
-//                     }
-//                 });
-//                 this.setState({ userPosts: posts })
-//             })
-//             .then(() => console.log('Loaded'))
-//
-//     }
-//
-//     render() {
-// //        let {id} = useParams();
-//         return (
-//             <React.Fragment>
-//                 <div className="user_data">
-//                     <p>user = {this.props.match.params.id}</p>
-//                     <p>name = {this.state && this.state.currentUser ? this.state.currentUser.name : ''}</p>
-//                 </div>
-//                 <div className="user_posts">
-//                     {this.state && this.state.userPosts && this.state.userPosts.map((props, index) => (
-//                         <UserPost key={index} {... props} />
-//                     ))}
-//
-//                 </div>
-//             </React.Fragment>
-//         );
-//     }
-// }
-//
-// export default UserPage;
 
 
 
