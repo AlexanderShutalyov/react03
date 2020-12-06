@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import UserCardsWrapper from "./components/UserCardsWrapper/UserCardsWrapper";
 import UserPage from "./components/UserPage/UserPage";
-import React from "react";
+import React, { Component, useState, useEffect }from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,14 +12,13 @@ import {
 } from "react-router-dom";
 
 function App() {
-
     return (
         <React.Fragment>
             <Router>
                 <div>
                     <Switch>
                         <Route path="/user/:id" children={props => <UserPage {...props}/>}/>
-                        <Route exact path="/" component={UserCardsWrapper}>
+                        <Route exact path="/" component={() => <UserCardsWrapper/> }>
                             {/*<UserCardsWrapper/>*/}
                         </Route>
                     </Switch>
